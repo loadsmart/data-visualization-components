@@ -1,17 +1,28 @@
 import React from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
+import {Meta, Story} from '@storybook/react/types-6-0';
 
-import { Button, ButtonProps } from '@loadsmart/data-visualization'
+import {Button, ButtonProps} from '@loadsmart/data-visualization'
 import {ThemeProvider} from "styled-components";
 
 export default {
   title: 'Button',
   component: Button,
   argTypes: {
-    onClick: { action: 'clicked' },
+    onClick: {
+      action: 'clicked',
+      table: {
+        disable: true
+      }
+    },
+    useThemeProvider: {
+      table: {
+        disable: true
+      }
+    },
     children: {
-      control: 'text'
+      control: 'text',
+      name: 'content'
     },
     theme: {
       control: {
@@ -19,10 +30,11 @@ export default {
       }
     },
   },
+  decorators: [(Story, args) => args.useThemeProvider ? <ThemeProvider theme={args.theme}><Story/></ThemeProvider> :
+    <Story/>]
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => <Button {...args}>{args.children}</Button>;
-const TemplateProvider: Story<ButtonProps> = ({ theme, ...args}) => <ThemeProvider theme={theme}><Button {...args}>{args.children}</Button></ThemeProvider>
 
 const freshThemeOfBelAir = {
   button: {
@@ -67,7 +79,7 @@ CustomTheme.args = {
   theme: freshThemeOfBelAir
 }
 
-export const WithProvider = TemplateProvider.bind({});
+export const WithProvider = Template.bind({});
 WithProvider.args = {
   active: false,
   children: 'Button',
