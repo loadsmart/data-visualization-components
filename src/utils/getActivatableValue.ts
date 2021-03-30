@@ -9,5 +9,5 @@ export default (
 
   const fullPath = [element, active ? 'active' : 'regular', ...subPath]
 
-  return getFromTheme(customTheme, fullPath.join('.'))
+  return getFromTheme(customTheme, fullPath)
 }

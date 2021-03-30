@@ -1,7 +1,7 @@
 import defaultTheme from '../theme'
-const get = require('lodash.get')
+import get from 'lodash.get'
 
-export default (customTheme: object, path: string) => {
+export default (customTheme: object, path: string[] | string) => {
   const defaultValue = get(defaultTheme, path, null)
   const customValue = get(customTheme, path, null)
 

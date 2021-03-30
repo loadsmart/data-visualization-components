@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import getActivatableValue from '../../utils/getActivatableValue'
+import { ButtonProps } from './Button.types'
 
-export const StyledButton = styled.button<{ active?: boolean | undefined }>`
+export const StyledButton = styled.button<ButtonProps>`
   background: ${({ theme, active }) =>
     getActivatableValue(theme, active, 'button.background')};
   border-color: ${({ theme, active }) =>

@@ -1,10 +1,6 @@
-import React, { FC, ButtonHTMLAttributes } from 'react'
+import React, { FC } from 'react'
 import { StyledButton } from './Button.styles'
-
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  active?: boolean
-  theme?: object
-}
+import { ButtonProps } from './Button.types'
 
 const Button: FC<ButtonProps> = ({ theme, active, ...props }) => (
   <StyledButton {...props} theme={theme} active={active} />
