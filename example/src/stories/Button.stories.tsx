@@ -2,37 +2,74 @@ import React from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { Button, ButtonProps } from './Button';
+import { Button, ButtonProps } from '@loadsmart/data-visualization'
+import {ThemeProvider} from "styled-components";
 
 export default {
-  title: 'Example/Button',
+  title: 'Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    onClick: { action: 'clicked' },
+    children: {
+      control: 'text'
+    },
+    theme: {
+      control: {
+        type: 'object',
+      }
+    },
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <Button {...args}>{args.children}</Button>;
+const TemplateProvider: Story<ButtonProps> = ({ theme, ...args}) => <ThemeProvider theme={theme}><Button {...args}>{args.children}</Button></ThemeProvider>
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Button',
+const freshThemeOfBelAir = {
+  button: {
+    active: {
+      background: 'mediumpurple',
+      text: {
+        color: 'lightgreen'
+      },
+      border: {
+        color: 'mediumpurple'
+      },
+      padding: '10px',
+    },
+    regular: {
+      text: {
+        color: 'green'
+      },
+      background: 'plum',
+      padding: '10px',
+    }
+  }
+}
+
+export const DefaultTheme = Template.bind({});
+DefaultTheme.args = {
+  active: false,
+  children: 'Button',
+  theme: {}
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
+export const ActiveButton = Template.bind({});
+ActiveButton.args = {
+  active: true,
+  children: 'Button',
+  theme: {}
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
+export const CustomTheme = Template.bind({});
+CustomTheme.args = {
+  active: true,
+  children: 'Button',
+  theme: freshThemeOfBelAir
+}
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+export const WithProvider = TemplateProvider.bind({});
+WithProvider.args = {
+  active: false,
+  children: 'Button',
+  theme: freshThemeOfBelAir
+}
