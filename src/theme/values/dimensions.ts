@@ -1,4 +1,5 @@
 export default {
+  zero: 0,
   smallest: '1px',
   smaller: '2px',
   small: '4px',
