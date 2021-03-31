@@ -1,2 +1,2 @@
 export { default } from './Card'
-export type { CardProps } from './Card.types'
+export type { CardProps, CardContentProps, CardTitleProps } from './Card.types'
