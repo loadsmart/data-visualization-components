@@ -2,6 +2,7 @@ import React, {ChangeEvent, MouseEvent, ReactNode} from 'react';
 
 import {Meta, Story} from '@storybook/react/types-6-0';
 
+// @ts-ignore
 import {Card, CardContentProps, CardProps, CardTitleProps} from '@loadsmart/data-visualization'
 
 export default {

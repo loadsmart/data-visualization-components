@@ -2,6 +2,7 @@ import React from 'react';
 
 import {Meta, Story} from '@storybook/react/types-6-0';
 
+// @ts-ignore
 import { CardContentProps, Card } from '@loadsmart/data-visualization'
 
 export default {
@@ -11,11 +12,16 @@ export default {
     children: { control: { type: 'text', name: 'Content' } },
     editable: { control: 'boolean' },
     editing: { control: 'boolean' },
-    editButtonClickCallback: {
+    editStartButtonClickCallback: {
       action: 'Edit Button Clicked',
       table: { disabled: true }
     },
-    editButtonContent: { control: 'text' },
+    editEndButtonClickCallback: {
+      action: 'Edit Button Clicked',
+      table: { disabled: true }
+    },
+    editStartButtonContent: { control: 'text' },
+    editEndButtonContent: { control: 'text' },
     contentChangeCallback: {
       action: 'Content Changed',
       table: { disabled: true }
