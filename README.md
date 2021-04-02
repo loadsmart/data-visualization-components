@@ -41,4 +41,4 @@ class Example extends Component {
 
 ## License
 
-MIT
+[MIT](./LICENSE)
