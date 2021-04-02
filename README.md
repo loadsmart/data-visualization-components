@@ -23,11 +23,11 @@ yarn add @loadsmart/data-visualization
 ```tsx
 import React, { Component } from 'react'
 
-import { CircularGauge } from '@loadsmart/data-visualization'
+import { Card } from '@loadsmart/data-visualization'
 
 class Example extends Component {
   render() {
-    return <CircularGauge />
+    return <Card />
   }
 }
 ```
