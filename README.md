@@ -32,8 +32,13 @@ class Example extends Component {
 }
 ```
 
+## Meta
+
+- **State:** development
+- **Demo:** <https://loadsmart-data-insights-ui.netlify.app/>
+- **Point People:** [@lipe-dev](https://github.com/lipe-dev)
+
+
 ## License
 
 MIT
-
-[lipe-dev](https://github.com/lipe-dev) @ [Loadsmart](https://github.com/loadsmart)
