@@ -32,12 +32,15 @@ class Example extends Component {
 }
 ```
 
+## Contributing
+
+Guide at [CONTRIBUTING.md](https://github.com/loadsmart/data-visualization-components/blob/main/CONTRIBUTING.md)
+
 ## Meta
 
 - **State:** development
 - **Demo:** <https://loadsmart-data-insights-ui.netlify.app/>
 - **Point People:** [@lipe-dev](https://github.com/lipe-dev)
-
 
 ## License
 
