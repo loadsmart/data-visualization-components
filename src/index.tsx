@@ -7,3 +7,10 @@ export type {
   CardContentProps,
   CardTitleProps
 } from './components/Card'
+
+export { default as BarChart } from './components/BarChart'
+export type {
+  BarChartProps,
+  BarChartDataType,
+  BarChartColorsType
+} from './components/BarChart'

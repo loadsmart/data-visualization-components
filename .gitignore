@@ -23,3 +23,5 @@ yarn-error.log*
 
 example/storybook-static
 example/node_modules
+
+coverage
