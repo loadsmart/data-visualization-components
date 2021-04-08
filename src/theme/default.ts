@@ -4,11 +4,11 @@ import typography from './values/typography'
 
 const baseButton = {
   background: colors.neutral.lightest,
-  padding: dimensions.small,
+  padding: dimensions.pixels.small,
   border: {
     color: colors.neutral.darkest,
-    width: dimensions.smallest,
-    radius: dimensions.small
+    width: dimensions.pixels.smallest,
+    radius: dimensions.pixels.small
   },
   text: {
     color: colors.neutral.darkest,
@@ -33,10 +33,10 @@ const button = {
 
 const card = {
   background: colors.neutral.lightest,
-  padding: dimensions.large,
+  padding: dimensions.pixels.large,
   shadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
   border: {
-    radius: dimensions.small
+    radius: dimensions.pixels.small
   },
   title: {
     size: typography.card.title.size,
@@ -47,23 +47,41 @@ const card = {
     size: typography.card.content.size,
     weight: typography.card.content.weight,
     color: colors.neutral.darker,
-    margin: `${dimensions.small} 0 0 0`,
+    margin: `${dimensions.pixels.small} 0 0 0`,
     editButton: {
-      padding: dimensions.medium,
+      padding: dimensions.pixels.medium,
       background: colors.neutral.lighter,
       border: {
-        radius: dimensions.largest,
-        width: dimensions.zero
+        radius: dimensions.pixels.largest,
+        width: dimensions.pixels.zero
       },
-      width: dimensions.larger,
-      height: dimensions.larger,
-      right: dimensions.large,
-      top: dimensions.large
+      width: dimensions.pixels.larger,
+      height: dimensions.pixels.larger,
+      right: dimensions.pixels.large,
+      top: dimensions.pixels.large
     }
+  }
+}
+
+const bar = {
+  fill: colors.status.danger.dark,
+  size: dimensions.number.large,
+  value: {
+    color: colors.neutral.lightest,
+    weight: typography.charts.weight,
+    size: typography.charts.size
+  },
+  name: {
+    color: colors.neutral.darkest,
+    weight: typography.charts.weight,
+    size: typography.charts.size
   }
 }
 
 export default {
   button,
-  card
+  card,
+  charts: {
+    bar
+  }
 }

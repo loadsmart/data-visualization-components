@@ -13,5 +13,9 @@ export default {
       size: '16px',
       weight: '600'
     }
+  },
+  charts: {
+    size: 12,
+    weight: 600
   }
 }
