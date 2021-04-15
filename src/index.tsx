@@ -14,3 +14,6 @@ export type {
   BarChartDataType,
   BarChartColorsType
 } from './components/BarChart'
+
+export type { ThemeType } from './theme'
+export { default as DefaultTheme, defaultValues } from './theme'
