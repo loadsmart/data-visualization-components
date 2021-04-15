@@ -1,5 +1,5 @@
 import React from "react";
-import {BarChart} from "@loadsmart/data-visualization";
+import {BarChart, ThemeType} from "@loadsmart/data-visualization";
 import {Story} from "@storybook/react/types-6-0";
 
 export default {
@@ -61,8 +61,8 @@ const mockData = [
   },
 ]
 
-const Template:Story = (args) => <BarChart data={mockData} colors={args.colors} valueFormatter={args.valueFormatter} theme={
-  {
+const Template:Story = (args) => {
+  const theme:ThemeType = {
     charts: {
       bar: {
         fill: args.fill,
@@ -80,7 +80,8 @@ const Template:Story = (args) => <BarChart data={mockData} colors={args.colors} 
       }
     }
   }
-}/>
+  return <BarChart data={mockData} colors={args.colors} valueFormatter={args.valueFormatter} theme={theme}/>
+}
 
 export const DefaultTheme = Template.bind({})
 DefaultTheme.args = {}

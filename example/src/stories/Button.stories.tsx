@@ -3,7 +3,7 @@ import React from 'react';
 import {Meta, Story} from '@storybook/react/types-6-0';
 
 // @ts-ignore
-import {Button, ButtonProps} from '@loadsmart/data-visualization'
+import {Button, ButtonProps, ThemeType} from '@loadsmart/data-visualization'
 import {ThemeProvider} from "styled-components";
 
 export default {
@@ -37,7 +37,7 @@ export default {
 
 const Template: Story<ButtonProps> = (args) => <Button {...args}>{args.children}</Button>;
 
-const freshThemeOfBelAir = {
+const freshThemeOfBelAir:ThemeType = {
   button: {
     active: {
       background: 'mediumpurple',

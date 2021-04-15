@@ -1,17 +1,17 @@
 export default {
   button: {
     size: '12px',
-    weight: '600',
+    weight: 600,
     transform: 'uppercase'
   },
   card: {
     title: {
       size: '14px',
-      weight: '400'
+      weight: 400
     },
     content: {
       size: '16px',
-      weight: '600'
+      weight: 600
     }
   },
   charts: {

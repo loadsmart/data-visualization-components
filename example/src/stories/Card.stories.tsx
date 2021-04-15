@@ -3,7 +3,7 @@ import React, {ChangeEvent, MouseEvent, ReactNode} from 'react';
 import {Meta, Story} from '@storybook/react/types-6-0';
 
 // @ts-ignore
-import {Card, CardContentProps, CardProps, CardTitleProps} from '@loadsmart/data-visualization'
+import {Card, CardContentProps, CardProps, CardTitleProps, ThemeType} from '@loadsmart/data-visualization'
 
 export default {
   title: 'Card',
@@ -187,7 +187,7 @@ interface StoryType {
 }
 
 const FullTemplate: Story<StoryType> = (args) => {
-  const theme = args.customTheme ? {
+  const theme:ThemeType = args.customTheme ? {
     card: {
       background: args.background,
       padding: `${args.padding}px`,
@@ -219,7 +219,7 @@ const FullTemplate: Story<StoryType> = (args) => {
         }
       }
     }
-  } : undefined
+  } : {}
 
   const cardProps: CardProps = {
     theme

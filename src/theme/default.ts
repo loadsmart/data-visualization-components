@@ -1,8 +1,17 @@
+import * as CSS from 'csstype'
+
 import colors from './values/colors'
 import dimensions from './values/dimensions'
 import typography from './values/typography'
+import {
+  BarChartType,
+  BaseButtonType,
+  ButtonType,
+  CardType,
+  ThemeType
+} from './types'
 
-const baseButton = {
+const baseButton: BaseButtonType = {
   background: colors.neutral.lightest,
   padding: dimensions.pixels.small,
   border: {
@@ -14,10 +23,11 @@ const baseButton = {
     color: colors.neutral.darkest,
     size: typography.button.size,
     weight: typography.button.weight,
-    transform: typography.button.transform
+    transform: typography.button.transform as CSS.Property.TextTransform
   }
 }
-const button = {
+
+const button: ButtonType = {
   regular: {
     ...baseButton
   },
@@ -31,7 +41,7 @@ const button = {
   }
 }
 
-const card = {
+const card: CardType = {
   background: colors.neutral.lightest,
   padding: dimensions.pixels.large,
   shadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
@@ -53,7 +63,7 @@ const card = {
       background: colors.neutral.lighter,
       border: {
         radius: dimensions.pixels.largest,
-        width: dimensions.pixels.zero
+        width: dimensions.pixels.zero as CSS.Property.Width
       },
       width: dimensions.pixels.larger,
       height: dimensions.pixels.larger,
@@ -63,7 +73,7 @@ const card = {
   }
 }
 
-const bar = {
+const bar: BarChartType = {
   fill: colors.status.danger.dark,
   size: dimensions.number.large,
   value: {
@@ -78,10 +88,12 @@ const bar = {
   }
 }
 
-export default {
+const defaultTheme: ThemeType = {
   button,
   card,
   charts: {
     bar
   }
 }
+
+export default defaultTheme
