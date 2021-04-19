@@ -15,5 +15,8 @@ export type {
   BarChartColorsType
 } from './components/BarChart'
 
+export { default as CircularGauge } from './components/CircularGauge'
+export type { CircularGaugePropsType } from './components/CircularGauge'
+
 export type { ThemeType } from './theme'
 export { default as DefaultTheme, defaultValues } from './theme'
