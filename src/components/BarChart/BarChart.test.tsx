@@ -1,10 +1,10 @@
 import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import BarChart from './BarChart'
-import { ColorsType, DataType } from './BarChart.types'
+import { BarChartDataType, BarChartColorsType } from './BarChart.types'
 import defaultTheme from '../../theme'
 
-const mockData: DataType[] = [
+const mockData: BarChartDataType[] = [
   {
     name: 'Foo',
     value: 0
@@ -52,7 +52,7 @@ describe('BarChart Component', () => {
   })
 
   it('colors bars according to the colors "from" rules', async () => {
-    const fromColors: ColorsType[] = [
+    const fromColors: BarChartColorsType[] = [
       { from: 50, color: 'blue' },
       { from: 0, color: 'red' }
     ]
@@ -79,7 +79,7 @@ describe('BarChart Component', () => {
   })
 
   it('colors bars according to the colors "to" rules', async () => {
-    const fromColors: ColorsType[] = [
+    const fromColors: BarChartColorsType[] = [
       { to: 50, color: 'orange' },
       { to: 100, color: 'pink' }
     ]
@@ -106,7 +106,7 @@ describe('BarChart Component', () => {
   })
 
   it('colors bars according to the colors range rules, with fallback to default', async () => {
-    const fromColors: ColorsType[] = [
+    const fromColors: BarChartColorsType[] = [
       { from: 0, to: 20, color: 'brown' },
       // { from: 21, to: 40, color: 'should fall back to default' },
       { from: 41, to: 60, color: 'grey' },
@@ -126,7 +126,7 @@ describe('BarChart Component', () => {
     ).toBe('brown')
     expect(
       container?.querySelector('path[name=Bar]')?.getAttribute('fill')
-    ).toBe(defaultTheme.charts.bar.fill)
+    ).toBe(defaultTheme.charts!.bar!.fill)
     expect(
       container?.querySelector('path[name=Boo]')?.getAttribute('fill')
     ).toBe('grey')

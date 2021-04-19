@@ -68,10 +68,25 @@ export interface BarChartType {
   }
 }
 
+export interface CircularGaugeType {
+  barFill?: CSS.Property.Fill
+  barBackground?: CSS.Property.Fill
+  width?: number
+  height?: number
+  value?: {
+    size?: number
+    color?: CSS.Property.Color | undefined
+    weight?: CSS.Property.FontWeight
+  }
+}
+
 export interface ThemeType {
   button?: ButtonType
   card?: CardType
   charts?: {
     bar?: BarChartType
+  }
+  gauges?: {
+    circular?: CircularGaugeType
   }
 }
