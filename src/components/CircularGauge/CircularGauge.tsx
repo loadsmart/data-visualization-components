@@ -8,7 +8,8 @@ const CircularGauge: CircularGaugeComponent = ({
   value,
   max,
   showAsPercentage,
-  theme
+  theme,
+  responsive
 }) => {
   const contextTheme = useContext(ThemeContext)
 
@@ -19,6 +20,11 @@ const CircularGauge: CircularGaugeComponent = ({
   )
   const barBackground = getFromClosestTheme(
     'gauges.circular.barBackground',
+    theme,
+    contextTheme
+  )
+  const barWidth = getFromClosestTheme(
+    'gauges.circular.barWidth',
     theme,
     contextTheme
   )
@@ -41,11 +47,6 @@ const CircularGauge: CircularGaugeComponent = ({
 
   const width = getFromClosestTheme(
     'gauges.circular.width',
-    theme,
-    contextTheme
-  )
-  const height = getFromClosestTheme(
-    'gauges.circular.height',
     theme,
     contextTheme
   )
@@ -83,11 +84,14 @@ const CircularGauge: CircularGaugeComponent = ({
   // It is a problem with ReCharts' responsive container.
   // For most applications, having it set to 100% will work fine, making it inherit those from its parent node.
   return (
-    <ResponsiveContainer width={width || '100%'} height={height || '100%'}>
+    <ResponsiveContainer
+      width={responsive ? '100%' : width}
+      height={responsive ? '100%' : width}
+    >
       <PieChart>
         <Pie
-          innerRadius='80%'
-          outerRadius='100%'
+          innerRadius={responsive ? '80%' : width / 2 - barWidth}
+          outerRadius={responsive ? '100%' : width / 2}
           data={data}
           startAngle={90}
           endAngle={-270}

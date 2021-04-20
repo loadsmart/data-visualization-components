@@ -6,7 +6,7 @@ export interface CircularGaugePropsType {
   showAsPercentage?: boolean
   max: number
   theme?: ThemeType
-  width?: number
+  responsive?: boolean
 }
 
 export interface CircularGaugeComponent extends FC<CircularGaugePropsType> {}

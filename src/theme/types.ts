@@ -71,8 +71,8 @@ export interface BarChartType {
 export interface CircularGaugeType {
   barFill?: CSS.Property.Fill
   barBackground?: CSS.Property.Fill
+  barWidth?: number
   width?: number
-  height?: number
   value?: {
     size?: number
     color?: CSS.Property.Color | undefined
