@@ -7,7 +7,8 @@ import {
   BarChartType,
   BaseButtonType,
   ButtonType,
-  CardType, CircularGaugeType,
+  CardType,
+  CircularGaugeType,
   ThemeType
 } from './types'
 
@@ -91,6 +92,8 @@ const bar: BarChartType = {
 const circular: CircularGaugeType = {
   barFill: colors.neutral.darker,
   barBackground: colors.neutral.light,
+  barWidth: 4,
+  width: 40,
   value: {
     color: colors.neutral.darker,
     size: typography.charts.size,
