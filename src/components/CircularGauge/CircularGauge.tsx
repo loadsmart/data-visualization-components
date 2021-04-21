@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useCallback, useContext, useMemo } from 'react'
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts'
 import { CircularGaugeComponent } from './CircularGauge.types'
 import { ThemeContext } from 'styled-components'
@@ -51,38 +51,44 @@ const CircularGauge: CircularGaugeComponent = ({
     contextTheme
   )
 
-  const renderLabel = (props: any) => {
-    if (props.index) return
-    return (
-      <text
-        x={props.cx + 1}
-        y={props.cy + 1}
-        textAnchor='middle'
-        alignmentBaseline='middle'
-        fontSize={valueSize}
-        fill={valueColor}
-        fontWeight={valueWeight}
-      >
-        {`${props.value}${showAsPercentage ? '%' : ''}`}
-      </text>
-    )
-  }
-
-  const data = [
-    {
-      id: 'value',
-      value: showAsPercentage ? Math.round((value / max) * 100) : value
+  const renderLabel = useCallback(
+    (props: any) => {
+      if (props.index) return ''
+      return (
+        <text
+          x={props.cx + 1}
+          y={props.cy + 1}
+          textAnchor='middle'
+          alignmentBaseline='middle'
+          fontSize={valueSize}
+          fill={valueColor}
+          fontWeight={valueWeight}
+        >
+          {`${props.value}${showAsPercentage ? '%' : ''}`}
+        </text>
+      )
     },
-    {
-      id: 'backgorund',
-      value: showAsPercentage ? 100 - (value / max) * 100 : max - value
-    }
-  ]
+    [showAsPercentage, valueSize, valueColor, valueWeight]
+  )
+
+  const data = useMemo(
+    () => [
+      {
+        id: 'value',
+        value: showAsPercentage ? Math.round((value / max) * 100) : value
+      },
+      {
+        id: 'background',
+        value: showAsPercentage ? 100 - (value / max) * 100 : max - value
+      }
+    ],
+    [showAsPercentage, value, max]
+  )
 
   // For testing purposes we need to pass down a width and height
-  // In the testing env this would render nothing otherwise
-  // It is a problem with ReCharts' responsive container.
-  // For most applications, having it set to 100% will work fine, making it inherit those from its parent node.
+  //  In the testing env this would render nothing otherwise
+  //  It is a problem with ReCharts' responsive container.
+  //  For most applications, having it set to 100% will work fine, making it inherit those from its parent node.
   return (
     <ResponsiveContainer
       width={responsive ? '100%' : width}
