@@ -21,7 +21,32 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+coverage
+
+# yarn 2 stuff
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 example/storybook-static
 example/node_modules
+example/.yarn
+!example/.yarn/cache
+!example/.yarn/patches
+!example/.yarn/plugins
+!example/.yarn/releases
+!example/.yarn/sdks
+!example/.yarn/versions
 
-coverage
+lib/node_modules
+lib/.yarn
+!lib/.yarn/cache
+!lib/.yarn/patches
+!lib/.yarn/plugins
+!lib/.yarn/releases
+!lib/.yarn/sdks
+!lib/.yarn/versions
