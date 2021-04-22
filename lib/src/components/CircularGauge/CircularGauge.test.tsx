@@ -1,13 +1,12 @@
 import React from 'react'
-import {render, screen, waitFor} from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import CircularGauge from './CircularGauge'
 import { ThemeType } from '../../theme'
 
 const theme: ThemeType = {
   gauges: {
     circular: {
-      width: 100,
-      height: 100
+      width: 100
     }
   }
 }
