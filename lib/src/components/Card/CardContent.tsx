@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useEffect, useState } from 'react'
 import { CardContentProps } from './Card.types'
 import { StyledCardContent, StyledCardTextArea } from './Card.styles'
-import Button from '../../components/Button'
+import Button from '../Button'
 import EditButton from './EditButton'
 
 const CardContent: FC<CardContentProps> = ({

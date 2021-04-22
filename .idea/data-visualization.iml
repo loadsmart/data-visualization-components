@@ -7,6 +7,9 @@
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/example/storybook-static" />
       <excludeFolder url="file://$MODULE_DIR$/coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/.yarn/unplugged" />
+      <excludeFolder url="file://$MODULE_DIR$/lib/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/example/.yarn" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
