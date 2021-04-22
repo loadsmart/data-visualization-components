@@ -26,7 +26,7 @@ To get up and running a development environment you will need to do the followin
   - this will also install the top level dependencies
 
 
-- install all dependencies for each workspace with `yarn workspace foreach install`
+- install all dependencies for each workspace with `yarn workspaces foreach install`
   - this will simply run the installation command for each workspace
 
 
