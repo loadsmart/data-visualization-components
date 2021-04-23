@@ -66,6 +66,10 @@ export interface BarChartType {
     weight?: CSS.Property.FontWeight
     size?: number
   }
+  axis?: {
+    weight?: CSS.Property.FontWeight
+    distance?: number
+  }
 }
 
 export interface CircularGaugeType {

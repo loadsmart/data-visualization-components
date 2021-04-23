@@ -1,6 +1,6 @@
-import React from "react";
-import {BarChart, ThemeType} from "@loadsmart/data-visualization";
-import {Story} from "@storybook/react/types-6-0";
+import React from 'react'
+import { BarChart, ThemeType } from '@loadsmart/data-visualization'
+import { Story } from '@storybook/react/types-6-0'
 
 export default {
   title: 'Bar Chart',
@@ -38,6 +38,12 @@ export default {
     colors: {
       control: 'object',
       description: 'You can omit either from and to properties'
+    },
+    axisWeight: {
+      control: 'number'
+    },
+    axisDistance: {
+      control: 'range'
     }
   }
 }
@@ -58,11 +64,11 @@ const mockData = [
   {
     name: 'Item D',
     value: 0
-  },
+  }
 ]
 
-const Template:Story = (args) => {
-  const theme:ThemeType = {
+const Template: Story = (args) => {
+  const theme: ThemeType = {
     charts: {
       bar: {
         fill: args.fill,
@@ -76,11 +82,22 @@ const Template:Story = (args) => {
           color: args.nameColor,
           size: args.nameSize,
           weight: args.nameWeight
+        },
+        axis: {
+          weight: args.axisWeight,
+          distance: args.axisDistance
         }
       }
     }
   }
-  return <BarChart data={mockData} colors={args.colors} valueFormatter={args.valueFormatter} theme={theme}/>
+  return (
+    <BarChart
+      data={mockData}
+      colors={args.colors}
+      valueFormatter={args.valueFormatter}
+      theme={theme}
+    />
+  )
 }
 
 export const DefaultTheme = Template.bind({})
@@ -88,7 +105,7 @@ DefaultTheme.args = {}
 
 export const CustomValueFormatter = Template.bind({})
 CustomValueFormatter.args = {
-  valueFormatter: (value:string) => `**--${value}--**`
+  valueFormatter: (value: string) => `**--${value}--**`
 }
 
 export const FullyCustomizedTheme = Template.bind({})
@@ -101,6 +118,7 @@ FullyCustomizedTheme.args = {
   nameColor: '#552299',
   nameWeight: '300',
   nameSize: 28,
+  axisWeight: 900
 }
 
 export const ColorsBasedOnValue = Template.bind({})
@@ -133,6 +151,6 @@ MoreColorConfigs.args = {
     {
       from: 0,
       color: 'orange'
-    },
+    }
   ]
 }

@@ -56,6 +56,16 @@ const BarChart: FC<BarChartProps> = ({
     theme,
     contextTheme
   )
+  const axisWeight = getFromClosestTheme(
+    'charts.bar.axis.weight',
+    theme,
+    contextTheme
+  )
+  const axisDistance = getFromClosestTheme(
+    'charts.bar.axis.distance',
+    theme,
+    contextTheme
+  )
 
   const getFillByValue = ({ value }: BarChartDataType) => {
     if (!colors) return fillColor
@@ -78,9 +88,7 @@ const BarChart: FC<BarChartProps> = ({
     return (
       <g>
         <text
-          x={
-            width === barSize ? barSize / 2 + valueSize : width + valueSize / 2
-          }
+          x={width === barSize ? barSize / 2 : width - barSize / 2}
           y={y + barSize / 2 + 1}
           fill={valueColor}
           textAnchor={width === barSize ? 'middle' : 'end'}
@@ -114,6 +122,22 @@ const BarChart: FC<BarChartProps> = ({
     )
   }
 
+  const renderTick = (props: any) => {
+    const { y, index, visibleTicksCount } = props
+
+    const newY = y + axisDistance
+
+    let newTextAnchor = 'middle'
+    if (index === 0) newTextAnchor = 'start'
+    if (index === visibleTicksCount - 1) newTextAnchor = 'end'
+
+    return (
+      <text {...props} y={newY} textAnchor={newTextAnchor}>
+        {props.tickFormatter(props.payload.value)}
+      </text>
+    )
+  }
+
   return (
     <ResponsiveContainer
       height={(data?.length || 0) * (barSize + nameSize + 8) + 50}
@@ -130,7 +154,6 @@ const BarChart: FC<BarChartProps> = ({
           <LabelList
             dataKey='name'
             position='insideLeft'
-            dy={-24}
             fontWeight='bold'
             fontSize={12}
             content={renderNameLabel}
@@ -147,11 +170,11 @@ const BarChart: FC<BarChartProps> = ({
           tickLine={false}
           fontSize={valueSize}
           interval={0}
-          padding={{ left: valueSize, right: valueSize }}
-          fontWeight='bold'
+          fontWeight={axisWeight}
           tickFormatter={(tick) => {
             return valueFormatter ? valueFormatter(tick) : tick
           }}
+          tick={renderTick}
         />
         <YAxis
           type='category'

@@ -7,6 +7,7 @@ import {
   ChangeEvent,
   ButtonHTMLAttributes
 } from 'react'
+import { ThemeType } from '../../theme'
 
 export interface CardProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -33,5 +34,5 @@ export interface CardType extends FC<CardProps> {
 
 export interface EditButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
-  theme?: object
+  theme?: ThemeType
 }
