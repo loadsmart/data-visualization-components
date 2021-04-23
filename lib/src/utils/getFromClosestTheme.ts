@@ -7,10 +7,10 @@ const getFromClosestTheme = (
   contextTheme?: object
 ) => {
   const localValue = get(localTheme, path, null)
-  if (localValue) return localValue
+  if (localValue !== null) return localValue
 
   const contextValue = get(contextTheme, path, null)
-  if (contextValue) return contextValue
+  if (contextValue !== null) return contextValue
 
   return get(defaultTheme, path, null)
 }

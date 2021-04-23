@@ -86,6 +86,10 @@ const bar: BarChartType = {
     color: colors.neutral.darkest,
     weight: typography.charts.weight,
     size: typography.charts.size
+  },
+  axis: {
+    weight: typography.charts.axisWeight,
+    distance: dimensions.number.medium
   }
 }
 

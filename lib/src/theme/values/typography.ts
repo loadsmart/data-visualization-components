@@ -16,6 +16,7 @@ export default {
   },
   charts: {
     size: 12,
-    weight: 600
+    weight: 600,
+    axisWeight: 300
   }
 }
