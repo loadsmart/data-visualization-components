@@ -2296,7 +2296,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@loadsmart/data-visualization-example@workspace:example"
   dependencies:
-    "@loadsmart/data-visualization": "workspace:^2021.4.21-1"
+    "@loadsmart/data-visualization": "workspace:2021.4.24"
     "@storybook/addon-actions": ^6.1.21
     "@storybook/addon-essentials": ^6.1.21
     "@storybook/addon-links": ^6.1.21
@@ -2318,7 +2318,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@loadsmart/data-visualization@workspace:^2021.4.21-1, @loadsmart/data-visualization@workspace:lib":
+"@loadsmart/data-visualization@workspace:2021.4.24, @loadsmart/data-visualization@workspace:lib":
   version: 0.0.0-use.local
   resolution: "@loadsmart/data-visualization@workspace:lib"
   dependencies:

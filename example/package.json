@@ -5,14 +5,14 @@
   "private": true,
   "scripts": {
     "start-app": "node ../node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
+    "build-react": "node ../node_modules/react-scripts/bin/react-scripts.js build",
     "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
     "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject",
     "start": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build": "build-storybook -s public"
   },
   "dependencies": {
-    "@loadsmart/data-visualization": "workspace:^2021.4.21-1"
+    "@loadsmart/data-visualization": "workspace:2021.4.24"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.21",

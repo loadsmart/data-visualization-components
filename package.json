@@ -5,7 +5,7 @@
     "lib/"
   ],
   "private": true,
-  "version": "2021.4.21-1",
+  "version": "2021.4.24",
   "description": "A library of data visualization React components to help in dashboard building and more!",
   "author": "lipe-dev",
   "license": "MIT",
@@ -18,16 +18,9 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
-    "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
-    "test:build": "run-s build",
-    "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jest-environment-jsdom-sixteen",
-    "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
+    "build": "yarn workspaces foreach run build",
+    "prepublish": "yarn build",
+    "publish": "yarn prepublish; yarn workspace @loadsmart/data-visualization npm publish --access public",
     "commit": "cz"
   },
   "peerDependencies": {
