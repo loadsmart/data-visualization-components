@@ -25,13 +25,13 @@
     }
   },
   "rules": {
-    "space-before-function-paren": 0,
-    "react/prop-types": 0,
-    "react/jsx-handler-names": 0,
-    "react/jsx-fragments": 0,
-    "react/no-unused-prop-types": 0,
-    "import/export": 0,
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "error"
+//    "space-before-function-paren": 0,
+    "react/prop-types": 0, // disabled because prop checking is done with TS
+//    "react/jsx-handler-names": 0,
+//    "react/jsx-fragments": 0,
+    "react/no-unused-prop-types": 0, // prop checking is done with TS
+    "import/export": 0, // some exports are never used, which is fine since this is a lib
+    "no-unused-vars": "off", // this fails to recognize that imported types were used
+    "@typescript-eslint/no-unused-vars": "error" // this works with types, replaces the one above
   }
 }
