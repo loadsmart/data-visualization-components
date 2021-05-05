@@ -34,8 +34,7 @@ export const StyledCardTextArea = styled.textarea`
   width: 100%;
 `
 
-export const StyledEditButton = styled.button`
-
+export const StyledEditButton: any = styled.button`
   position: absolute;
   top: ${({ theme }) => getFromTheme(theme, 'card.content.editButton.top')};
   right: ${({ theme }) => getFromTheme(theme, 'card.content.editButton.right')};

@@ -23,7 +23,7 @@
     "publish": "yarn prepublish; yarn workspace @loadsmart/data-visualization npm publish --access public",
     "commit": "cz",
     "start": "yarn workspaces foreach -pvi run start",
-    "test:eslint": "yarn eslint --fix lib/src/*/**.* example/src/*/**.*",
+    "test:eslint": "yarn eslint --fix {example,lib}/src/**/*.{js,jsx,ts,tsx}",
     "test:stylelint": "yarn stylelint --fix lib/ example/",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
