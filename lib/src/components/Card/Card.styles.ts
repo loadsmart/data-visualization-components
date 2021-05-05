@@ -3,27 +3,31 @@ import getFromTheme from '../../utils/getFromTheme'
 import { CardContentProps, CardProps, CardTitleProps } from './Card.types'
 
 export const StyledCard = styled.div<CardProps>`
-  background: ${({ theme }) => getFromTheme(theme, 'card.background')};
-  box-shadow: ${({ theme }) => getFromTheme(theme, 'card.shadow')};
-  border-radius: ${({ theme }) => getFromTheme(theme, 'card.border.radius')};
-  padding: ${({ theme }) => getFromTheme(theme, 'card.padding')};
-  font-family: ${({ theme }) => getFromTheme(theme, 'card.fontFamily')};
   position: relative;
+
+  padding: ${({ theme }) => getFromTheme(theme, 'card.padding')};
+
+  font-family: ${({ theme }) => getFromTheme(theme, 'card.fontFamily')};
+
+  background: ${({ theme }) => getFromTheme(theme, 'card.background')};
+  border-radius: ${({ theme }) => getFromTheme(theme, 'card.border.radius')};
+  box-shadow: ${({ theme }) => getFromTheme(theme, 'card.shadow')};
 `
 
 export const StyledCardTitle = styled.div<CardTitleProps>`
-  font-size: ${({ theme }) => getFromTheme(theme, 'card.title.size')};
-  font-weight: ${({ theme }) => getFromTheme(theme, 'card.title.weight')};
   color: ${({ theme }) => getFromTheme(theme, 'card.title.color')};
+  font-weight: ${({ theme }) => getFromTheme(theme, 'card.title.weight')};
+  font-size: ${({ theme }) => getFromTheme(theme, 'card.title.size')};
   font-family: ${({ theme }) => getFromTheme(theme, 'card.title.fontFamily')};
 `
 
 export const StyledCardContent = styled.div<CardContentProps>`
-  font-size: ${({ theme }) => getFromTheme(theme, 'card.content.size')};
-  font-weight: ${({ theme }) => getFromTheme(theme, 'card.content.weight')};
-  color: ${({ theme }) => getFromTheme(theme, 'card.content.color')};
-  font-family: ${({ theme }) => getFromTheme(theme, 'card.content.fontFamily')};
   margin: ${({ theme }) => getFromTheme(theme, 'card.content.margin')};
+
+  color: ${({ theme }) => getFromTheme(theme, 'card.content.color')};
+  font-weight: ${({ theme }) => getFromTheme(theme, 'card.content.weight')};
+  font-size: ${({ theme }) => getFromTheme(theme, 'card.content.size')};
+  font-family: ${({ theme }) => getFromTheme(theme, 'card.content.fontFamily')};
 `
 
 export const StyledCardTextArea = styled.textarea`
@@ -31,23 +35,24 @@ export const StyledCardTextArea = styled.textarea`
 `
 
 export const StyledEditButton = styled.button`
-  padding: ${({ theme }) =>
-    getFromTheme(theme, 'card.content.editButton.padding')};
-  background: ${({ theme }) =>
-    getFromTheme(theme, 'card.content.editButton.background')};
-  border-radius: ${({ theme }) =>
-    getFromTheme(theme, 'card.content.editButton.border.radius')};
-  border-width: ${({ theme }) =>
-    getFromTheme(theme, 'card.content.editButton.border.width')};
-  width: ${({ theme }) => getFromTheme(theme, 'card.content.editButton.width')};
-  height: ${({ theme }) =>
-    getFromTheme(theme, 'card.content.editButton.height')};
 
   position: absolute;
-  right: ${({ theme }) => getFromTheme(theme, 'card.content.editButton.right')};
   top: ${({ theme }) => getFromTheme(theme, 'card.content.editButton.top')};
+  right: ${({ theme }) => getFromTheme(theme, 'card.content.editButton.right')};
 
   display: flex;
   align-items: center;
   justify-content: center;
+  width: ${({ theme }) => getFromTheme(theme, 'card.content.editButton.width')};
+  height: ${({ theme }) =>
+    getFromTheme(theme, 'card.content.editButton.height')};
+  padding: ${({ theme }) =>
+    getFromTheme(theme, 'card.content.editButton.padding')};
+
+  background: ${({ theme }) =>
+    getFromTheme(theme, 'card.content.editButton.background')};
+  border-width: ${({ theme }) =>
+    getFromTheme(theme, 'card.content.editButton.border.width')};
+  border-radius: ${({ theme }) =>
+    getFromTheme(theme, 'card.content.editButton.border.radius')};
 `

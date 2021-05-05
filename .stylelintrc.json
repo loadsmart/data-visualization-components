@@ -1,0 +1,11 @@
+{
+  "extends": ["@loadsmart/stylelint-config"],
+  "ignoreFiles": [
+    "**/*.json",
+    "**/*.mdx",
+    "**/*.ico",
+    "**/storybook-static/**.*",
+    "**/node_modules/**.*",
+    "**/dist/**.*"
+  ]
+}
