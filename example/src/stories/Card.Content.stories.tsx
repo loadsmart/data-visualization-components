@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import {Meta, Story} from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0'
 
 // @ts-ignore
 import { CardContentProps, Card } from '@loadsmart/data-visualization'
@@ -29,21 +29,22 @@ export default {
   }
 } as Meta
 
-const Template: Story<CardContentProps> = (args) =>
+const Template: Story<CardContentProps> = (args) => (
   <Card>
     <Card.Content {...args} />
   </Card>
+)
 
-export const CardWithContent = Template.bind({});
+export const CardWithContent = Template.bind({})
 CardWithContent.args = {
   children: 'This is the content',
   editable: false
 }
 
-export const CardWithEditableContent = Template.bind({});
+export const CardWithEditableContent = Template.bind({})
 CardWithEditableContent.args = {
   children: 'You can edit this',
   editable: true,
   editing: true,
-  editEndButtonContent: 'Finish Editing',
+  editEndButtonContent: 'Finish Editing'
 }

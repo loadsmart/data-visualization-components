@@ -4,11 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start-app": "node ../node_modules/react-scripts/bin/react-scripts.js start",
-    "build-react": "node ../node_modules/react-scripts/bin/react-scripts.js build",
-    "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
-    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject",
-    "start": "start-storybook -p 6006 -s public",
+    "start": "start-storybook -p 6006 -s public --quiet",
     "build": "build-storybook -s public"
   },
   "dependencies": {
@@ -21,19 +17,6 @@
     "@storybook/node-logger": "^6.1.21",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.1.21"
-  },
-  "peerDependencies": {
-    "@testing-library/jest-dom": "*",
-    "@testing-library/react": "*",
-    "@testing-library/user-event": "*",
-    "@types/jest": "*",
-    "@types/node": "*",
-    "@types/react": "*",
-    "@types/react-dom": "*",
-    "react": "*",
-    "react-dom": "*",
-    "react-scripts": "*",
-    "typescript": "*"
   },
   "browserslist": {
     "production": [

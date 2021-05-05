@@ -30,14 +30,13 @@ To get up and running a development environment you will need to do the followin
   - this will simply run the installation command for each workspace
 
 
-- start the `lib` watch + build cycle with `yarn workspace @loadsmart/data-visualization start`
-  - this will make microbundle start watching and compiling `lib/src` to `lib/dist`
-  - changes made on `lib/src` will be reflected immediately.
-
-
-- start the `example` storybook server with `yarn workspace @loadsmart/data-visualization-example start`
-  - this will run the usual storybook scripts and start the dev server
-  - this workspace imports locally form the other (`lib`) workspace, so changes there will be reflected here.
+- start the development env with `yarn start`. This script will do the following for you:
+  - start the `lib` watch + build cycle
+    - this will make microbundle start watching and compiling `lib/src` to `lib/dist`
+    - changes made on `lib/src` will be reflected immediately.
+  - start the `example` storybook server
+    - this will run the usual storybook scripts and start the dev server
+    - this workspace imports locally form the other (`lib`) workspace, so changes there will be reflected here.
 
 
 Publishing a new version to NPM currently is done manually, if you have permission to do that:

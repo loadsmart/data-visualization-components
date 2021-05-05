@@ -1,6 +1,6 @@
 import React from 'react'
 import { CircularGauge, ThemeType } from '@loadsmart/data-visualization'
-import {Story} from "@storybook/react/types-6-0";
+import { Story } from '@storybook/react/types-6-0'
 
 export default {
   title: 'Circular Gauge',
@@ -52,8 +52,19 @@ interface ArgsTypes {
   barWidth: number
 }
 
-const Template:Story<ArgsTypes> = ({ max, value, width, barBackground, valueWeight, valueSize, valueColor, showAsPercentage, barFill, barWidth}) => {
-  const theme:ThemeType = {
+const Template: Story<ArgsTypes> = ({
+  max,
+  value,
+  width,
+  barBackground,
+  valueWeight,
+  valueSize,
+  valueColor,
+  showAsPercentage,
+  barFill,
+  barWidth
+}) => {
+  const theme: ThemeType = {
     gauges: {
       circular: {
         value: {
@@ -69,13 +80,20 @@ const Template:Story<ArgsTypes> = ({ max, value, width, barBackground, valueWeig
     }
   }
 
-  return <CircularGauge max={max} value={value} theme={theme} showAsPercentage={showAsPercentage}/>
+  return (
+    <CircularGauge
+      max={max}
+      value={value}
+      theme={theme}
+      showAsPercentage={showAsPercentage}
+    />
+  )
 }
 
 export const DefaultTheme = Template.bind({})
 DefaultTheme.args = {
   max: 100,
-  value: 50,
+  value: 50
 }
 
 export const CustomTheme = Template.bind({})
@@ -88,7 +106,7 @@ CustomTheme.args = {
   barWidth: 30,
   valueColor: 'blue',
   valueSize: 80,
-  valueWeight: 600,
+  valueWeight: 600
 }
 
 export const PercentageBased = Template.bind({})
@@ -99,13 +117,24 @@ PercentageBased.args = {
   showAsPercentage: true
 }
 
-const ResponsiveTemplate:Story<ArgsTypes> = ({ max, value, showAsPercentage}) => {
-  return <div>
-    <p>Below is a 100x100 div, the gauge should adapt to it</p>
-    <div style={{width: 100, height: 100, background: 'lightpink'}}>
-      <CircularGauge max={max} value={value} showAsPercentage={showAsPercentage} responsive />
+const ResponsiveTemplate: Story<ArgsTypes> = ({
+  max,
+  value,
+  showAsPercentage
+}) => {
+  return (
+    <div>
+      <p>Below is a 100x100 div, the gauge should adapt to it</p>
+      <div style={{ width: 100, height: 100, background: 'lightpink' }}>
+        <CircularGauge
+          max={max}
+          value={value}
+          showAsPercentage={showAsPercentage}
+          responsive
+        />
+      </div>
     </div>
-  </div>
+  )
 }
 
 export const ResponsiveExample = ResponsiveTemplate.bind({})
