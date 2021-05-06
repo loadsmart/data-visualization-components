@@ -1,0 +1,67 @@
+version: 2.1
+
+jobs:
+  lint:
+    docker:
+      - image: cimg/node:15.1
+    steps:
+      - checkout
+      - restore_cache:
+          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
+          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "yarn.lock"}}
+      - run:
+          name: setup workspaces
+          command: yarn
+      - save_cache:
+          key: node-deps-v1-{{ .Branch }}-{{checksum "yarn.lock"}}
+          paths:
+            - ~/node_modules
+            - ~/lib/node_modules
+            - ~/example/node_modules
+      - run:
+          name: run eslint
+          command: yarn test:eslint
+      - run:
+          name: run stylelint
+          command: yarn test:stylelint
+  test:
+    docker:
+      - image: cimg/node:15.1
+    steps:
+      - checkout
+      - restore_cache:
+          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
+          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "yarn.lock"}}
+      - run:
+          name: setup workspaces
+          command: yarn
+      - run:
+          name: run unit tests
+          command: yarn test:unit
+  build:
+    docker:
+      - image: cimg/node:15.1
+    steps:
+      - checkout
+      - restore_cache:
+          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
+          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "yarn.lock"}}
+      - run:
+          name: setup workspaces
+          command: yarn
+      - run:
+          name: run eslint
+          command: yarn build
+
+workflows:
+  orb-free-workflow:
+    jobs:
+      - lint
+      - test
+      - build

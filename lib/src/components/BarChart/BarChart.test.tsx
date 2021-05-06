@@ -39,7 +39,7 @@ describe('BarChart Component', () => {
     await waitFor(() => expect(screen.getAllByText(0).length).toBe(2))
     await waitFor(() => screen.getByText(30))
     await waitFor(() => screen.getByText(60))
-    await waitFor(() => expect(screen.getAllByText(100).length).toBe(3))
+    await waitFor(() => expect(screen.getAllByText(100).length).toBe(2))
   })
 
   it('render with a custom value formatter function', async () => {
@@ -48,7 +48,7 @@ describe('BarChart Component', () => {
     render(<BarChart data={mockData} valueFormatter={formatter} width={400} />)
 
     // One for each Bar (4 total) plus 5 for the XAxis (has 5 ticks)
-    await waitFor(() => expect(formatter).toHaveBeenCalledTimes(9))
+    await waitFor(() => expect(formatter).toHaveBeenCalledTimes(14))
   })
 
   it('colors bars according to the colors "from" rules', async () => {
