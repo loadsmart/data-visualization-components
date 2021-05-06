@@ -19,12 +19,12 @@
   },
   "scripts": {
     "build": "yarn workspaces foreach run build",
-    "prepublish": "yarn build",
-    "publish": "yarn prepublish; yarn workspace @loadsmart/data-visualization npm publish --access public",
+    "publish": "yarn build; yarn workspace @loadsmart/data-visualization npm publish --access public",
     "commit": "cz",
     "start": "yarn workspaces foreach -pvi run start",
     "test:eslint": "yarn eslint --fix {example,lib}/src/**/*.{js,jsx,ts,tsx}",
     "test:stylelint": "yarn stylelint --fix lib/ example/",
+    "text:unit": "yarn workspace @loadsmart/data-visualization run test:unit",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
