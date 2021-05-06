@@ -60,7 +60,7 @@ jobs:
           command: yarn build
 
 workflows:
-  orb-free-workflow:
+  lint-test-build:
     jobs:
       - lint
       - test
