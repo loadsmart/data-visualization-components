@@ -93,26 +93,26 @@ workflows:
     jobs:
       - setup
       - lint:
-          filter:
-            - branches:
+          filters:
+            branches:
                 only: /.*/
-            - tags:
+            tags:
                 ignore: /.*/
           requires:
             - setup
       - test:
-          filter:
-            - branches:
+          filters:
+            branches:
                 only: /.*/
-            - tags:
+            tags:
                 ignore: /.*/
           requires:
             - setup
       - build:
-          filter:
-            - branches:
+          filters:
+            branches:
                 only: /.*/
-            - tags:
+            tags:
                 ignore: /.*/
           requires:
             - setup
