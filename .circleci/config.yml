@@ -89,7 +89,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - run:
           name: deploy to npm
-          command: yarn workspace @loadsmart/data-visualization run release --dry-run --ci
+          command: yarn workspace @loadsmart/data-visualization run release --dry-run --ci --npm.skipChecks
 
 workflows:
   lint-test-build:
