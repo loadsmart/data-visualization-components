@@ -77,11 +77,33 @@ workflows:
     jobs:
       - setup
       - lint:
+          filter:
+            - branches:
+                only: /.*/
+            - tags:
+                ignore: /.*/
           requires:
             - setup
       - test:
+          filter:
+            - branches:
+                only: /.*/
+            - tags:
+                ignore: /.*/
           requires:
             - setup
       - build:
+          filter:
+            - branches:
+                only: /.*/
+            - tags:
+                ignore: /.*/
           requires:
             - setup
+      - deploy:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^\d+\.\d+\.\d+-.*/
+
