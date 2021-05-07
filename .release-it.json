@@ -1,6 +1,7 @@
 {
   "git": {
-    "commitMessage": "chore(lib): release version ${version}"
+    "commitMessage": "chore(lib): release version ${version}",
+    "requireCleanWorkingDir": false
   },
   "github": {
     "release": false,
