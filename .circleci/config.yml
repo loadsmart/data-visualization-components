@@ -71,6 +71,22 @@ jobs:
       - run:
           name: run eslint
           command: yarn build
+  deploy:
+    docker:
+      - image: cimg/node:15.1
+    steps:
+      - checkout
+      - restore_cache:
+          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
+          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "yarn.lock"}}
+      - run:
+          name: setup workspaces
+          command: yarn
+      - run:
+          name: deploy to npm
+          command: yarn workspace @loadsmart/data-visualization run release --dry-run
 
 workflows:
   lint-test-build:
@@ -101,9 +117,11 @@ workflows:
           requires:
             - setup
       - deploy:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^\d+\.\d+\.\d+-.*/
+          requires:
+            - setup
+#          filters:
+#            branches:
+#              ignore: /.*/
+#            tags:
+#              only: /^\d+\.\d+\.\d+-.*/
 
