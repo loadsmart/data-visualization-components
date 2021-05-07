@@ -2,6 +2,10 @@
   "git": {
     "commitMessage": "chore(lib): release version ${version}"
   },
+  "github": {
+    "release": true,
+    "releaseName": "${version}"
+  },
   "plugins": {
     "@csmith/release-it-calver-plugin" : {
       "format": "YYYY.MM.DD"

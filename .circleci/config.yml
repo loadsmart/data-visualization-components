@@ -86,7 +86,7 @@ jobs:
           command: yarn
       - run:
           name: deploy to npm
-          command: yarn workspace @loadsmart/data-visualization run release --dry-run
+          command: yarn workspace @loadsmart/data-visualization run release --dry-run --ci
 
 workflows:
   lint-test-build:
