@@ -85,6 +85,9 @@ jobs:
           name: setup workspaces
           command: yarn
       - run:
+          name: npm auth
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - run:
           name: deploy to npm
           command: yarn workspace @loadsmart/data-visualization run release --dry-run --ci
 
