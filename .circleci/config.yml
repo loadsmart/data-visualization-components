@@ -1,5 +1,18 @@
 version: 2.1
 
+commands:
+  set_deploy_key:
+    description: Sets the SSH key for project access
+    steps:
+      - run:
+          name: Setup Github as known host
+          command: |
+            mkdir -p -m 0700 ~/.ssh
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - add_ssh_keys:
+          fingerprints:
+            - 'fingerprint-will-go-here'
+
 jobs:
   setup:
     docker:
