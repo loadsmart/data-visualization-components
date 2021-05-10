@@ -1,7 +1,20 @@
 version: 2.1
 
+commands:
+  set_deploy_key:
+    description: Sets the SSH key for project access
+    steps:
+      - run:
+          name: Setup Github as known host
+          command: |
+            mkdir -p -m 0700 ~/.ssh
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - add_ssh_keys:
+          fingerprints:
+            - 'fingerprint-will-go-here'
+
 jobs:
-  lint:
+  setup:
     docker:
       - image: cimg/node:15.1
     steps:
@@ -20,6 +33,19 @@ jobs:
             - ~/node_modules
             - ~/lib/node_modules
             - ~/example/node_modules
+  lint:
+    docker:
+      - image: cimg/node:15.1
+    steps:
+      - checkout
+      - restore_cache:
+          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
+          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "yarn.lock"}}
+      - run:
+          name: setup workspaces
+          command: yarn
       - run:
           name: run eslint
           command: yarn test:eslint
@@ -58,10 +84,53 @@ jobs:
       - run:
           name: run eslint
           command: yarn build
+  deploy:
+    docker:
+      - image: cimg/node:15.1
+    steps:
+      - checkout
+      - restore_cache:
+          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
+          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "yarn.lock"}}
+      - run:
+          name: setup workspaces
+          command: yarn
+      - run:
+          name: npm auth
+          command: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+      - run:
+          name: deploy to npm
+          command: yarn workspace @loadsmart/data-visualization run release --dry-run --ci --npm.skipChecks
 
 workflows:
-  orb-free-workflow:
+  lint-test-build:
     jobs:
-      - lint
-      - test
-      - build
+      - setup
+      - lint:
+          filters:
+            branches:
+                ignore: main
+          requires:
+            - setup
+      - test:
+          filters:
+            branches:
+                ignore: main
+          requires:
+            - setup
+      - build:
+          filters:
+            branches:
+                ignore: main
+          requires:
+            - setup
+      - deploy:
+          requires:
+            - setup
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^\d+\.\d+\.\d+/

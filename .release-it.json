@@ -1,0 +1,15 @@
+{
+  "git": {
+    "commitMessage": "chore(lib): release version ${version} [skip ci]",
+    "requireCleanWorkingDir": false
+  },
+  "github": {
+    "release": false,
+    "releaseName": "${version}"
+  },
+  "plugins": {
+    "@csmith/release-it-calver-plugin" : {
+      "format": "YYYY.MM.DD"
+    }
+  }
+}
