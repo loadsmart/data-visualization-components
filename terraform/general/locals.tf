@@ -1,3 +1,3 @@
 locals {
-  project = "loadsmart-data-visualization"
+  project = "data-visualization-components"
 }

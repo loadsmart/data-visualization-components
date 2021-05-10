@@ -1,3 +1,3 @@
-output "deploy_loadsmart_data_visualization_fingerprint" {
-  value = tls_private_key.deploy_loadsmart_data_visualization.public_key_fingerprint_md5
+output "deploy_data-visualization-components_fingerprint" {
+  value = tls_private_key.deploy_data-visualization-components.public_key_fingerprint_md5
 }
