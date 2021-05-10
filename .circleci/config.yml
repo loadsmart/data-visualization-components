@@ -111,25 +111,19 @@ workflows:
       - lint:
           filters:
             branches:
-                only: /.*/
-            tags:
-                ignore: /.*/
+                ignore: main
           requires:
             - setup
       - test:
           filters:
             branches:
-                only: /.*/
-            tags:
-                ignore: /.*/
+                ignore: main
           requires:
             - setup
       - build:
           filters:
             branches:
-                only: /.*/
-            tags:
-                ignore: /.*/
+                ignore: main
           requires:
             - setup
       - deploy:
@@ -140,4 +134,3 @@ workflows:
 #              ignore: /.*/
 #            tags:
 #              only: /^\d+\.\d+\.\d+-.*/
-
