@@ -3,7 +3,8 @@
     "commitMessage": "chore(lib): release version ${version} [skip ci]",
     "requireCleanWorkingDir": false,
     "tag": false,
-    "requireUpstream": false
+    "requireUpstream": false,
+    "pushArgs": ["--set-upstream origin main"]
   },
   "github": {
     "release": false,
