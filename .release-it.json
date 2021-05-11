@@ -3,7 +3,8 @@
     "commitMessage": "chore(lib): release version ${version} [skip ci]",
     "requireCleanWorkingDir": false,
     "tag": false,
-    "requireBranch": "main"
+    "requireBranch": "main",
+    "requireUpstream": false
   },
   "github": {
     "release": false,
