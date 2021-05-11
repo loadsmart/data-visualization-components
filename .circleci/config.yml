@@ -130,8 +130,8 @@ workflows:
       - deploy:
           requires:
             - setup
-#          filters:
-#            branches:
-#              ignore: /.*/
-#            tags:
-#              only: /^\d+\.\d+\.\d+/
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^\d+\.\d+\.\d+/
