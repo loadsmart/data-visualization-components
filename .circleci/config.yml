@@ -100,6 +100,7 @@ jobs:
       - run:
           name: npm auth
           command: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+      - set_deploy_key
       - run:
           name: deploy to npm
           command: yarn workspace @loadsmart/data-visualization run release --dry-run --ci --npm.skipChecks
@@ -133,4 +134,4 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /^\d+\.\d+\.\d+/
+              only: /^\d+\.\d+\.\d+-*.*/
