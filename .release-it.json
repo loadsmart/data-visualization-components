@@ -9,10 +9,5 @@
   },
   "npm": {
     "ignoreVersion": true
-  },
-  "plugins": {
-    "@csmith/release-it-calver-plugin" : {
-      "format": "YYYY.MM.DD"
-    }
   }
 }
