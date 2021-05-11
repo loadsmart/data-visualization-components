@@ -11,7 +11,7 @@ commands:
             ssh-keyscan github.com >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
-            - 'fingerprint-will-go-here'
+            - 'a5:1c:81:ad:36:54:22:97:85:4a:47:56:13:53:67:1a'
 
 jobs:
   setup:
