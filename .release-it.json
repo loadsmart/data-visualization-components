@@ -4,8 +4,11 @@
     "requireCleanWorkingDir": false
   },
   "github": {
-    "release": false,
+    "release": true,
     "releaseName": "${version}"
+  },
+  "npm": {
+    "ignoreVersion": true
   },
   "plugins": {
     "@csmith/release-it-calver-plugin" : {
