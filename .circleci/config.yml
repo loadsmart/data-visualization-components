@@ -103,7 +103,7 @@ jobs:
       - set_deploy_key
       - run:
           name: deploy to npm
-          command: yarn workspace @loadsmart/data-visualization run release --dry-run --ci --npm.skipChecks
+          command: yarn workspace @loadsmart/data-visualization run release --dry-run --ci --npm.skipChecks --no-git.requireUpstream
 
 workflows:
   lint-test-build:
