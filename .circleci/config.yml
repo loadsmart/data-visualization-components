@@ -108,7 +108,12 @@ jobs:
 workflows:
   lint-test-build:
     jobs:
-      - setup
+      - setup:
+          filters:
+            branches:
+                ignore: main
+            tags:
+                only: /.*/
       - lint:
           filters:
             branches:
@@ -134,4 +139,4 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /^\d+\.\d+\.\d+-*.*/
+              only: /.*/
