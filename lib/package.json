@@ -17,7 +17,8 @@
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "test:unit": "react-scripts test --env=jest-environment-jsdom-sixteen --watchAll=false",
     "test:watch": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "release": "yarn build; npm publish --access public --dry-run"
+    "release": "release-it --dry-run --ci",
+    "publish": "yarn build; yarn release"
   },
   "peerDependencies": {
     "@types/recharts": "^1.8.19",

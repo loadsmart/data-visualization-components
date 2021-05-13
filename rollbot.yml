@@ -1,8 +1,0 @@
-ci:
-  skip: false
-versioning:
-  strategy: calver
-  pattern: 'YYYY.MM.DD'
-  default_when_none: '2021.5.11'
-git:
-  create_release: true
