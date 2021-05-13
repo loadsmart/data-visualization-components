@@ -1,7 +1,7 @@
 {
   "name": "@loadsmart/data-visualization-example",
   "homepage": ".",
-  "version": "0.0.0",
+  "version": "2021.5.13",
   "private": true,
   "scripts": {
     "start": "start-storybook -p 6006 -s public --quiet",
