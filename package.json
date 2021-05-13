@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "yarn workspaces foreach run build",
-    "publish": "yarn build; yarn workspace @loadsmart/data-visualization npm publish --access public",
+    "publish": "yarn workspace @loadsmart/data-visualization run release",
     "commit": "cz",
     "start": "yarn workspaces foreach -pvi run start",
     "test:eslint": "yarn eslint --fix {example,lib}/src/**/*.{js,jsx,ts,tsx}",
