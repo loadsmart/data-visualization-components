@@ -2,7 +2,7 @@ ci:
   skip: false
 versioning:
   strategy: calver
-  pattern: 'YYYY.MM.DD.MICRO'
-  default_when_none: '2021.5.11.1'
+  pattern: 'YYYY.MM.DD-MICRO'
+  default_when_none: '2021.5.11-1'
 git:
   create_release: true
