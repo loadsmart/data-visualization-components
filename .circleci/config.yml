@@ -107,12 +107,7 @@ jobs:
 workflows:
   lint-test-build:
     jobs:
-      - setup:
-          filters:
-            branches:
-                ignore: main
-            tags:
-                only: /.*/
+      - setup
       - lint:
           filters:
             branches:
