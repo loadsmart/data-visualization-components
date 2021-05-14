@@ -1,6 +1,6 @@
 {
   "name": "@loadsmart/data-visualization",
-  "version": "2021.5.13",
+  "version": "0.0.0",
   "description": "A library of data visualization React components to help in dashboard building and more!",
   "author": "lipe-dev",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "test:unit": "react-scripts test --env=jest-environment-jsdom-sixteen --watchAll=false",
     "test:watch": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "release": "release-it --dry-run --ci"
+    "release": "release-it --ci --no-npm.publish"
   },
   "peerDependencies": {
     "@types/recharts": "^1.8.19",
@@ -27,7 +27,6 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^2.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",

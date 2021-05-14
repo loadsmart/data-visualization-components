@@ -1,10 +1,11 @@
 {
   "git": {
+    "commit": false,
+    "push": false,
     "commitMessage": "chore(lib): release version ${version} [skip ci]",
     "requireCleanWorkingDir": false,
     "tag": false,
-    "requireUpstream": false,
-    "pushArgs": ["--set-upstream origin main"]
+    "requireUpstream": false
   },
   "github": {
     "release": false,
