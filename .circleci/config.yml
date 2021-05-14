@@ -103,6 +103,7 @@ jobs:
       - run:
           name: npm auth
           command: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+      - set_deploy_key
       - run:
           name: deploy to npm
           command: yarn publish
