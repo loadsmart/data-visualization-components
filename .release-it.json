@@ -10,7 +10,10 @@
     "release": false,
     "releaseName": "${version}"
   },
-  "npm": {
-    "ignoreVersion": true
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
+    }
   }
 }

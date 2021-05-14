@@ -18,7 +18,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "yarn workspaces foreach run build",
+    "build:all": "yarn workspaces foreach run build",
+    "build:lib": "yarn workspace @loadsmart/data-visualization run build",
     "publish": "yarn workspace @loadsmart/data-visualization run release",
     "commit": "cz",
     "start": "yarn workspaces foreach -pvi run start",
