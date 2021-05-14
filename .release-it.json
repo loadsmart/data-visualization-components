@@ -1,14 +1,10 @@
 {
   "git": {
-    "commit": false,
-    "push": false,
     "commitMessage": "chore(lib): release version ${version} [skip ci]",
     "requireCleanWorkingDir": false,
-    "tag": false,
     "requireUpstream": false
   },
   "github": {
-    "release": false,
     "releaseName": "${version}"
   },
   "plugins": {
