@@ -85,6 +85,7 @@ jobs:
           name: run eslint
           command: yarn build
   deploy:
+    context: loadsmart-ui
     docker:
       - image: cimg/node:15.1
     steps:
