@@ -1,6 +1,6 @@
 {
   "git": {
-    "commitMessage": "chore(lib ): release version ${version} [skip ci]",
+    "commitMessage": "chore(lib): release version ${version} [skip ci]",
     "tagName": "${version}",
     "tagAnnotation": "Release ${version}",
     "requireCleanWorkingDir": false
