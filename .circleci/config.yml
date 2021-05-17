@@ -102,7 +102,7 @@ jobs:
           command: yarn build:lib
       - run:
           name: npm auth
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+          command: echo "//registry.npmjs.org/:_authToken=${DI_NPM_TOKEN}" > .npmrc
       - set_deploy_key
       - run:
           name: deploy to npm
