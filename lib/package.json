@@ -1,6 +1,6 @@
 {
   "name": "@loadsmart/data-visualization",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A library of data visualization React components to help in dashboard building and more!",
   "author": "lipe-dev",
   "license": "MIT",
