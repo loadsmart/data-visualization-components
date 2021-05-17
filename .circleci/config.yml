@@ -103,6 +103,9 @@ jobs:
       - run:
           name: npm auth
           command: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+      - run:
+          name: npm login
+          command: npm login
       - set_deploy_key
       - run:
           name: deploy to npm
