@@ -106,7 +106,7 @@ jobs:
       - set_deploy_key
       - run:
           name: set git user
-          command: git config user.email fe@lipe.dev && git config user.name lipe-dev
+          command: git config user.email felipe.pereira@loadsmart.com && git config user.name lipe-dev
       - run:
           name: deploy to npm
           command: yarn publish
