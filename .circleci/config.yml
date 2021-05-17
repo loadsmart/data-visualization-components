@@ -105,6 +105,11 @@ jobs:
           command: echo $DI_NPM_TOKEN && echo $NPM_TOKEN && echo "//registry.npmjs.org/:_authToken=$DI_NPM_TOKEN" > lib/.npmrc && cat lib/.npmrc
       - set_deploy_key
       - run:
+          name: set git user
+          commands:
+            - git config user.email fe@lipe.dev
+            - git config user.name lipe-dev
+      - run:
           name: deploy to npm
           command: yarn publish
 
