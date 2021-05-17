@@ -1,3 +1,15 @@
+# [1.0.0](https://github.com/loadsmart/data-visualization-components/compare/2021.5.13...1.0.0) (2021-05-17)
+
+
+### Features
+
+* **project:** reset versioning to use SEMVER ([983bcda](https://github.com/loadsmart/data-visualization-components/commit/983bcda74ad890c223c6668395f50b6c8bd0af2d))
+
+
+### BREAKING CHANGES
+
+* **project:** calver versioning versions will be unpublished
+
 ## [2021.4.24](https://github.com/loadsmart/data-visualization-components/compare/2021.5.13...1.0.0) (2021-04-23)
 
 
