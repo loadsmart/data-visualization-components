@@ -101,8 +101,11 @@ jobs:
           name: build lib
           command: yarn build:lib
       - run:
+          name: ignore .npmrc
+          command: git update-index --assume-unchanged .npmrc
+      - run:
           name: npm auth
-          command: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - set_deploy_key
       - run:
           name: deploy to npm
