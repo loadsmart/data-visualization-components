@@ -18,8 +18,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle --no-compress",
-    "start": "microbundle watch --no-compress",
+    "build": "microbundle-crl --no-compress",
+    "start": "microbundle-crl watch --no-compress",
     "test:unit": "react-scripts test --env=jest-environment-jsdom-sixteen --watchAll=false",
     "test:watch": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "release": "release-it --ci"
