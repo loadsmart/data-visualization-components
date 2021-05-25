@@ -8,7 +8,12 @@ import { BarChart } from '@loadsmart/data-visualization'
 
 const App = () => (
   <div>
-    <BarChart data={[]} />
+    <BarChart
+      data={[
+        { name: 'Foo', value: 50 },
+        { name: 'Bar', value: 100 }
+      ]}
+    />
   </div>
 )
 
