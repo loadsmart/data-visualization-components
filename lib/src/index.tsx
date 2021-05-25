@@ -1,3 +1,6 @@
+import 'react-app-polyfill/ie11'
+import 'react-app-polyfill/stable'
+
 export { default as Button } from './components/Button'
 export type { ButtonProps } from './components/Button'
 

@@ -7,14 +7,19 @@
   "repository": "https://github.com/loadsmart/data-visualization-components",
   "homepage": "https://loadsmart-data-insights-ui.netlify.app/",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.m.js",
+  "exports": {
+    "require": "./dist/index.js",
+    "default": "./dist/index.modern.js"
+  },
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "build": "microbundle --no-compress",
+    "start": "microbundle watch --no-compress",
     "test:unit": "react-scripts test --env=jest-environment-jsdom-sixteen --watchAll=false",
     "test:watch": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "release": "release-it --ci"
@@ -35,5 +40,18 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "ie 11",
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  }
 }
