@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/loadsmart/data-visualization-components/compare/1.0.6...1.0.7) (2021-05-26)
+
+
+### Bug Fixes
+
+* **lib:** fix IE11 compatible build settings ([499ebed](https://github.com/loadsmart/data-visualization-components/commit/499ebed3ca5399118f58afd479088a7b4b3fe84e))
+
 ## [1.0.6](https://github.com/loadsmart/data-visualization-components/compare/1.0.5...1.0.6) (2021-05-17)
 
 ## [1.0.5](https://github.com/loadsmart/data-visualization-components/compare/1.0.4...1.0.5) (2021-05-17)
