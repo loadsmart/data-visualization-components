@@ -23,6 +23,7 @@
     "publish": "yarn workspace @loadsmart/data-visualization run release",
     "commit": "cz",
     "start": "yarn workspaces foreach -pvi run start",
+    "start:app": "yarn workspace @loadsmart/data-visualization-example run start:app",
     "test:eslint": "yarn eslint --fix {example,lib}/src/**/*.{js,jsx,ts,tsx}",
     "test:stylelint": "yarn stylelint --fix lib/ example/",
     "text:unit": "yarn workspace @loadsmart/data-visualization run test:unit",
@@ -85,5 +86,19 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "browserslist": {
+    "production": [
+      "ie 11",
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "ie 11",
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
   }
 }

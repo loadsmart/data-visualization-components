@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "start": "start-storybook -p 6006 -s public --quiet",
-    "build": "build-storybook -s public"
+    "build": "build-storybook -s public",
+    "start:app": "react-scripts start"
   },
   "dependencies": {
     "@loadsmart/data-visualization": "workspace:*"
@@ -16,18 +17,21 @@
     "@storybook/addon-links": "^6.1.21",
     "@storybook/node-logger": "^6.1.21",
     "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/preset-ie11": "^0.0.1",
     "@storybook/react": "^6.1.21"
   },
   "browserslist": {
     "production": [
+      "ie 11",
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "ie 11",
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ]
   }
 }

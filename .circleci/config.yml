@@ -82,8 +82,8 @@ jobs:
           name: setup workspaces
           command: yarn
       - run:
-          name: run eslint
-          command: yarn build
+          name: run build
+          command: yarn build:lib
   deploy:
     docker:
       - image: cimg/node:15.1
