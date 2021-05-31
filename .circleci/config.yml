@@ -151,8 +151,8 @@ workflows:
           filters:
             branches:
               only: main
-            requires:
-              - setup
+          requires:
+            - setup
       - deploy:
           context: loadsmart-ui
           requires:
