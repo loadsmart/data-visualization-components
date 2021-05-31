@@ -1,3 +1,5 @@
+## [1.0.8](https://github.com/loadsmart/data-visualization-components/compare/1.0.7...1.0.8) (2021-05-31)
+
 ## [1.0.7](https://github.com/loadsmart/data-visualization-components/compare/1.0.6...1.0.7) (2021-05-26)
 
 
