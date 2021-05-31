@@ -1,7 +1,10 @@
 # @loadsmart/data-visualization
 
-[![NPM](https://img.shields.io/npm/v/@loadsmart/data-visualization.svg)](https://www.npmjs.com/package/@loadsmart/data-visualization) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@loadsmart/data-visualization.svg)](https://www.npmjs.com/package/@loadsmart/data-visualization)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Coverage Status](https://coveralls.io/repos/github/loadsmart/data-visualization-components/badge.svg?branch=main)](https://coveralls.io/github/loadsmart/data-visualization-components?branch=main)
+[![CI Status](https://circleci.com/gh/loadsmart/data-visualization-components/tree/main.svg?style=svg)](https://circleci.com/gh/loadsmart/data-visualization-components)
+[![Open Issues](https://img.shields.io/github/issues/loadsmart/data-visualization-components)](https://github.com/loadsmart/data-visualization-components/issues)
 
 ## Install
 
