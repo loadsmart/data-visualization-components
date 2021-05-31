@@ -9,7 +9,7 @@
     "start:app": "react-scripts start"
   },
   "dependencies": {
-    "@loadsmart/data-visualization": "npm:^1.0.7"
+    "@loadsmart/data-visualization": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.21",
