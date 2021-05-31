@@ -147,6 +147,12 @@ workflows:
           filters:
             branches:
               only: main
+      - test:
+          filters:
+            branches:
+              only: main
+            requires:
+              - setup
       - deploy:
           context: loadsmart-ui
           requires:
