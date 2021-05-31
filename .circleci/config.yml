@@ -52,8 +52,6 @@ jobs:
       - run:
           name: run eslint
           command: yarn test:eslint
-      - coveralls/upload:
-          path_to_lcov: ./lib/coverage/lcov.info
       - run:
           name: run stylelint
           command: yarn test:stylelint
@@ -73,6 +71,8 @@ jobs:
       - run:
           name: run unit tests
           command: yarn test:unit --coverage
+      - coveralls/upload:
+          path_to_lcov: ./lib/coverage/lcov.info
   build:
     docker:
       - image: cimg/node:15.1
