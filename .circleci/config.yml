@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  coveralls: coveralls/coveralls@1.0.6
+
 commands:
   set_deploy_key:
     description: Sets the SSH key for project access
@@ -67,7 +70,9 @@ jobs:
           command: yarn
       - run:
           name: run unit tests
-          command: yarn test:unit
+          command: yarn test:unit --coverage
+      - coveralls/upload:
+          path_to_lcov: ./lib/coverage/lcov.info
   build:
     docker:
       - image: cimg/node:15.1

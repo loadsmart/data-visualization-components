@@ -4,8 +4,9 @@
     "**/*.json",
     "**/*.mdx",
     "**/*.ico",
-    "**/storybook-static/**.*",
-    "**/node_modules/**.*",
-    "**/dist/**.*"
+    "**/storybook-static/**/**.*",
+    "**/node_modules/**/**.*",
+    "**/coverage/**/**.*",
+    "**/dist/**/**.*"
   ]
 }

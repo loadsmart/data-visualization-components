@@ -1,6 +1,7 @@
 # @loadsmart/data-visualization
 
 [![NPM](https://img.shields.io/npm/v/@loadsmart/data-visualization.svg)](https://www.npmjs.com/package/@loadsmart/data-visualization) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Coverage Status](https://coveralls.io/repos/github/loadsmart/data-visualization-components/badge.svg?branch=main)](https://coveralls.io/github/loadsmart/data-visualization-components?branch=main)
 
 ## Install
 

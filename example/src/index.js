@@ -13,6 +13,7 @@ const App = () => (
         { name: 'Foo', value: 50 },
         { name: 'Bar', value: 100 }
       ]}
+      valueFormatter={(value) => `foo${value}`}
     />
   </div>
 )

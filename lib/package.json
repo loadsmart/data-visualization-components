@@ -33,10 +33,27 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^2.0.1",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^13.1.1",
+    "@types/jest": "^26.0.22",
+    "@types/lodash.get": "^4.4.6",
+    "@types/node": "^12.12.38",
+    "@types/react": "^16.9.27",
+    "@types/react-dom": "^16.9.7",
+    "@types/recharts": "^1.8.19",
+    "@types/styled-components": "^5.1.9",
+    "csstype": "^3.0.7",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "lodash.get": "^4.4.2",
+    "microbundle-crl": "^0.13.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
-    "release-it": "^14.6.2"
+    "recharts": "^2.0.9",
+    "release-it": "^14.6.2",
+    "styled-components": "^5.2.1",
+    "typescript": "^3.7.5"
   },
   "files": [
     "dist"
