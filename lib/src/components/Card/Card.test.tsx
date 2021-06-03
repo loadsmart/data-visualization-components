@@ -66,4 +66,22 @@ describe('Card Component', () => {
     expect(saveCallback).toHaveBeenCalledTimes(1)
     expect(changeCallback).toHaveBeenCalledTimes(1)
   })
+
+  it('works without button editting callbacks', async () => {
+    render(
+      <Card>
+        <Card.Title>This Card is Editable</Card.Title>
+        <Card.Content editable editEndButtonContent='Finish Editing'>
+          Starting Content
+        </Card.Content>
+      </Card>
+    )
+
+    fireEvent.click(screen.getByText('✏️'))
+    fireEvent.change(screen.getByDisplayValue('Starting Content'), {
+      target: { value: 'New Value' }
+    })
+    fireEvent.click(screen.getByText('Finish Editing'))
+    screen.getByText('New Value')
+  })
 })

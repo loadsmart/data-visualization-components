@@ -113,6 +113,20 @@ const defaultTheme: ThemeType = {
   },
   gauges: {
     circular
+  },
+  emptyState: {
+    width: '100%',
+    height: '100%',
+    icon: {
+      color: colors.neutral.neutral,
+      width: 60,
+      height: 56
+    },
+    text: {
+      color: colors.neutral.darker,
+      size: typography.card.content.size,
+      weight: typography.card.content.weight
+    }
   }
 }
 
