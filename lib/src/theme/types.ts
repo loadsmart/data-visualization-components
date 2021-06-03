@@ -84,6 +84,21 @@ export interface CircularGaugeType {
   }
 }
 
+export interface EmptyStateType {
+  width?: CSS.Property.Width
+  height?: CSS.Property.Height
+  icon?: {
+    width?: CSS.Property.Width | number
+    height?: CSS.Property.Height | number
+    color?: CSS.Property.Fill
+  }
+  text?: {
+    size?: CSS.Property.FontSize
+    weight?: CSS.Property.FontWeight
+    color?: CSS.Property.Color
+  }
+}
+
 export interface ThemeType {
   button?: ButtonType
   card?: CardType
@@ -93,4 +108,5 @@ export interface ThemeType {
   gauges?: {
     circular?: CircularGaugeType
   }
+  emptyState?: EmptyStateType
 }

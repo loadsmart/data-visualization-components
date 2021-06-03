@@ -89,15 +89,18 @@ const CircularGauge: CircularGaugeComponent = ({
   //  In the testing env this would render nothing otherwise
   //  It is a problem with ReCharts' responsive container.
   //  For most applications, having it set to 100% will work fine, making it inherit those from its parent node.
+  const containerWidth = responsive ? '100%' : width
+  const containerHeight = responsive ? '100%' : width
+
+  const pieInnerRadius = responsive ? '80%' : width / 2 - barWidth
+  const pieOuterRadius = responsive ? '100%' : width / 2
+
   return (
-    <ResponsiveContainer
-      width={responsive ? '100%' : width}
-      height={responsive ? '100%' : width}
-    >
+    <ResponsiveContainer width={containerWidth} height={containerHeight}>
       <PieChart>
         <Pie
-          innerRadius={responsive ? '80%' : width / 2 - barWidth}
-          outerRadius={responsive ? '100%' : width / 2}
+          innerRadius={pieInnerRadius}
+          outerRadius={pieOuterRadius}
           data={data}
           startAngle={90}
           endAngle={-270}

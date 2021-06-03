@@ -27,4 +27,8 @@ describe('Circular Gauge Component', () => {
 
     await waitFor(() => screen.getByText('20%'), { timeout: 10000 })
   })
+
+  it('renders in responsive mode', () => {
+    render(<CircularGauge value={10} max={50} responsive />)
+  })
 })

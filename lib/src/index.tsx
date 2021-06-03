@@ -21,5 +21,8 @@ export type {
 export { default as CircularGauge } from './components/CircularGauge'
 export type { CircularGaugePropsType } from './components/CircularGauge'
 
+export { default as EmptyState } from './components/EmptyState'
+export type { EmptyStatePropsType } from './components/EmptyState'
+
 export type { ThemeType } from './theme'
 export { default as DefaultTheme, defaultValues } from './theme'
