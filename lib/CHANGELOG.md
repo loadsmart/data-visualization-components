@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/loadsmart/data-visualization-components/compare/1.0.11...1.1.0) (2021-06-03)
+
+
+### Features
+
+* **emptyState:** add the EmptyState component ([#45](https://github.com/loadsmart/data-visualization-components/issues/45)) ([5b8fb05](https://github.com/loadsmart/data-visualization-components/commit/5b8fb0522a69249c3c24d55c484c6567dc15bf68))
+
 ## [1.0.11](https://github.com/loadsmart/data-visualization-components/compare/1.0.10...1.0.11) (2021-05-31)
 
 ## [1.0.10](https://github.com/loadsmart/data-visualization-components/compare/1.0.9...1.0.10) (2021-05-31)
